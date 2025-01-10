@@ -76,10 +76,12 @@ router.post("/", async (req, res) => {
 })
 
 
-router.get("/status/:orderTrackingId", async (req, res) => {
+/*router.get("/status/:orderTrackingId", async (req, res) => {
     const { orderTrackingId } = req.params; // Order tracking ID you get from Pesapal's SubmitOrderRequest
     const { consumerKey, consumerSecret } = req.body; // Provide consumer credentials in request body
-    
+    */
+router.post("/status", async (req, res) => {
+    const {orderTrackingId} = req.body;
     try {
         // Step 1: Get the Bearer Token
         const { data } = await axios.post(
