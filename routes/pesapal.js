@@ -81,7 +81,7 @@ router.post("/", async (req, res) => {
     const { consumerKey, consumerSecret } = req.body; // Provide consumer credentials in request body
     */
 router.post("/status", async (req, res) => {
-    const {orderTrackingId} = req.body;
+    const {orderTrackingId, consumerKey, consumerSecret} = req.body;
     try {
         // Step 1: Get the Bearer Token
         const { data } = await axios.post(
